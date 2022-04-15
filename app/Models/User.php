@@ -7,8 +7,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Tag;
+use App\Models\Wachtrij;
 
-class User extends Authenticatable
+class user extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -18,7 +20,9 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'fname',
+        'lname',
+        'phoneNumber',
         'email',
         'password',
     ];
@@ -41,4 +45,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function myTags(){
+        return $this->hasMany(Tag::class,"user_id","id");
+    }
+
+    public function myWachtrijen(){
+        return $this->hasMany(Wachtrij::class,"user_id","id");
+    }
 }
