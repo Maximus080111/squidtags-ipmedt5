@@ -1,0 +1,12 @@
+[Unit]
+Description=Laravel Server
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+ExecStart=python "/home/pi/IPMEDT5/Python code/removeCheck.py"
+[Install]
+WantedBy=multi-user.target
