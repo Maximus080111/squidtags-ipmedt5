@@ -1,4 +1,4 @@
-from functions import *
+from functions1 import *
 from datetime import timedelta, datetime
 from time import sleep
 import mysql.connector
