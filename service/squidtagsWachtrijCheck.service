@@ -7,7 +7,8 @@ Type=simple
 Restart=always
 RestartSec=1
 User=root
-ExecStart=python3 "/home/pi/IPMEDT5/Python code/wachtrijCheck.py"
+WorkingDirectory=/home/pi/IPMEDT5
+ExecStart=python3 python/wachtrijCheck.py
 StandardError=journal
 [Install]
 WantedBy=multi-user.target
