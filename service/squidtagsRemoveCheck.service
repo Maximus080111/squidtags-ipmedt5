@@ -8,6 +8,6 @@ Restart=always
 RestartSec=1
 User=root
 WorkingDirectory=/home/pi/IPMEDT5
-ExecStart=python "/home/pi/IPMEDT5/Python code/removeCheck.py"
+ExecStart=python python/removeCheck.py
 [Install]
 WantedBy=multi-user.target
